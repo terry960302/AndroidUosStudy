@@ -21,10 +21,13 @@ class MainActivity : AppCompatActivity() {
 
         //어댑터 초기화
         _adapter = GroupAdapter()
-
+        val _content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         //데이터 설정
-        for(i in 1..20){
-            _adapter.add(MyItem(R.drawable.image_1, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."))
+        for(i in 1..10){
+            _adapter.add(MyItem(R.drawable.image_1, _content))
+            _adapter.add(MyItem(R.drawable.image_1, _content))
+            _adapter.add(MyItem(R.drawable.image_1, _content))
+            _adapter.add(MyItem(R.drawable.image_1, _content))
         }
 
         //리사이클러뷰 방향 설정

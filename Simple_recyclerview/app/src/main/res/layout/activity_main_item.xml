@@ -2,10 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#81ecec"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
+    <!--카드뷰-->
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_imageFrame"
         android:layout_width="50dp"
@@ -43,7 +42,7 @@
             android:layout_margin="10dp"
             android:maxWidth="250dp"
             android:minHeight="50dp"
-            android:text=""
+            android:text="asdasdasdasdasdasdaasdasdasdasdassdasdasdas"
             android:textColor="#ffffff" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
