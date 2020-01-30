@@ -52,14 +52,10 @@ class SplashActivity : AppCompatActivity() , Animation.AnimationListener{
             override fun run() {
                 //다음 창 이동
                 val intent  = Intent(applicationContext, MainActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
+                finish()
             }
         }, 2000)
-
-
-
-
     }
 
     override fun onAnimationStart(animation: Animation?) {
