@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "364436076666",
+    "firebase_url": "https://uosstudylogin.firebaseio.com",
+    "project_id": "uosstudylogin",
+    "storage_bucket": "uosstudylogin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364436076666:android:e0a26e208b544cda8fe3c3",
+        "android_client_info": {
+          "package_name": "com.example.a20200208_firebase_login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "364436076666-tqvm1j4ck8qiiamfquukrnj095qmrpes.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.a20200208_firebase_login",
+            "certificate_hash": "f021745d1b8ec36f69993e1ee267f5a4f3188b6c"
+          }
+        },
+        {
+          "client_id": "364436076666-j9mmfiulnlu1d2jec8tl15onqdi6g8fv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7QngtV65mFadCyDQx8CJRG2gLYBV2ux0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "364436076666-j9mmfiulnlu1d2jec8tl15onqdi6g8fv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
