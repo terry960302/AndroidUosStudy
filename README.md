@@ -84,6 +84,18 @@
 
 <br>
 
+## <3주 강습 후 학우분께서 만드신 결과물!>
+
+: 화훼 관련 쇼핑몰 느낌의 앱 디자인입니다.
+
+<p align="center">
+<img width="150" alt="1" src="https://user-images.githubusercontent.com/37768791/75609764-97c3f500-5b4e-11ea-80f9-700f5500c0e6.png">
+<img width="150" alt="1" src="https://user-images.githubusercontent.com/37768791/75609763-95fa3180-5b4e-11ea-99da-524a4c00001f.png">
+<img width="150" alt="1" src="https://user-images.githubusercontent.com/37768791/75609717-50d5ff80-5b4e-11ea-87bc-0cbca7379187.png">
+</p>
+
+</br>
+
 ## 2020/02/08 - Firebase Login
 
 : 구글 파이어베이스 프레임워크를 이용해서 로그인 기능을 구현해봅시다.
