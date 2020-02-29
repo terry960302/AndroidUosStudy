@@ -106,7 +106,7 @@
 6.  로그인이 시작되는 함수를 넣어줍니다.(파이어베이스 문서 참고)
 7.  로그인이 시작되고 나서 그걸 받는 onAcitivyResult 함수 안에서 로그인 후에 이루어질 작업에 대해서 처리합니다.
 
-## 2020/02/15 - Realm Database Memo App
+## 2020/02/15,22 - Realm Database Memo App
 
 : Realm이라는 내장 데이터베이스를 이용해서 간단한 메모장 앱을 만들어봅시다.
 
@@ -132,3 +132,29 @@
 
 - 추가적인 Realm 데이터베이스에 대한 궁금한 사항은 아래 블로그에서 확인하시면 됩니다.(포스팅 중 ㅎㅎ)<br>
   https://blog.naver.com/ljk041180/221809549714
+
+</br>
+
+## 2020/03/01 - Multi Image Picker + Staggered
+
+: 갤러리에서 이미지 하나가 아닌 "여러개"를 가져와서 인스타그램(?)처럼 띄우는 앱을 만들어보겠습니다.
+
+<p align="center">
+<img width="243" alt="2020-02-29 23;08;16" src="https://user-images.githubusercontent.com/37768791/75609143-82989780-5b49-11ea-88d3-fc28e94281e3.PNG">
+<img width="243" alt="2020-02-29 23;08;41" src="https://user-images.githubusercontent.com/37768791/75609162-a065fc80-5b49-11ea-87f5-a766a2418974.PNG">
+</p>
+</br>
+
+### 제작순서
+
+1. 많은 리사이클러뷰를 제작했기 때문에 이전처럼 동일하게 Groupie라이브러리를 이용해서 만들어줍니다.
+2. 리사이클러뷰 아이템을 디자인할 때는 주의할 점이 width는 match-parent로 height는 wrap-content로 해줍니다.
+3. 2번에 이어서 ImageView에 adjustViewBounds속성에 true값을 넣어주고, maxHeight를 200dp로 설정합니다.(이렇게 안하면 이미지의 높이가 너무 길게 나옵니다.)
+4. MainActivity.kt로 돌아와서 intent로 갤러리에 진입하는 코드를 적어주고 갤러리에 진입하는 순간에 EXTRA_ALLOW_MULTIPLE 속성을 넣어서 이미지를 여러개 선택할 수 있게 설정합니다.
+5. onActivityResult에서 선택한 이미지들을 for반복문으로 uri를 가져와서 bitmap으로 변환합니다.
+6. 변환한 bitmap을 모두 GroupAdapter에 add해줍니다.(bitmap으로만 넣는 이유는 따로 저장하지 않기 때문입니다.)
+   </br>
+   \*\*따로 저장하려면 데이터베이스를 이용해서 binary를 내장디비에 저장하거나 원격디비에 저장 후 url을 받아와서 glide로 띄우면 됩니다.
+
+7. 이미지를 가져올 때마다 가져온 이미지들을 반응해서 띄우려면 notifysetDataChanged를 해줍니다.
+8. recyclerView 레이아웃 매니저 설정을 이전 앱들과는 다르게 StaggeredGridLayoutManager로 설정합니다.
