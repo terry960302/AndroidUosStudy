@@ -20,7 +20,6 @@ class AddActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
 
-
         ev_input = findViewById(R.id.ev_input)
         cv_submit = findViewById(R.id.cv_submit)
 
@@ -44,9 +43,9 @@ class AddActivity : AppCompatActivity() {
         try{
             val realm = Realm.getDefaultInstance()
 
-            val lastId  : Number? = realm.where(MemoModel::class.java).max("id")
 
             realm.beginTransaction()
+            val lastId  : Number? = realm.where(MemoModel::class.java).max("id")
 
             val memo = MemoModel((lastId ?: -1).toLong() +1,  desc)
             realm.copyToRealm(memo)

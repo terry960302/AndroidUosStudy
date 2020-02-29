@@ -1,15 +1,15 @@
-package com.example.sendbird_chat
+package com.example.sendbird_chat.View
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sendbird_chat.RecyItems.UserItem
+import com.example.sendbird_chat.R
+import com.example.sendbird_chat.View.Item.UserItem
 import com.sendbird.android.ApplicationUserListQuery
 import com.sendbird.android.SendBird
 import com.sendbird.android.User
-import com.sendbird.android.UserListQuery
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 
@@ -25,23 +25,30 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportActionBar?.title = "유저 목록"
+
         //리사이클러뷰 설정
-        setRecycelrView()
+        initRecyclerView()
 
         //유저 목록 불러오기
-        val _applicationUserListQuery: ApplicationUserListQuery =
-            SendBird.createApplicationUserListQuery();
-        _applicationUserListQuery.next(UserListQuery.UserListQueryResultHandler() { list: List<User>, e ->
+        val usersQuery =
+            SendBird.createApplicationUserListQuery()
+        usersQuery.next { users: List<User>, e ->
             if (e != null) {
-                Log.e(TAG, e.message)
+                Log.e(TAG, e.message.toString())
             }
-            list.forEach{ user : User->
-                _userAdapter.add(UserItem(this@MainActivity, user.userId))
+            users.forEach{ user : User->
+                _userAdapter.add(
+                    UserItem(
+                        this@MainActivity,
+                        user.userId
+                    )
+                )
             }
-        })
+        }
     }
 
-    fun setRecycelrView() {
+    fun initRecyclerView() {
         rv_users = findViewById(R.id.rv_users)
         _userAdapter = GroupAdapter()
 

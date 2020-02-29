@@ -31,8 +31,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, AddActivity::class.java))
             finish()
         }
-
-
     }
 
     fun setRecyclerView(){
@@ -47,14 +45,6 @@ class MainActivity : AppCompatActivity() {
         getRealmData().forEach {
             memoAdapter.add(MemoItem(it))
         }
-
-        //연습용 데이터들
-//        memoAdapter.add(MemoItem(MemoModel(0, "asdas")))
-//        memoAdapter.add(MemoItem(MemoModel(0, "asdas")))
-//        memoAdapter.add(MemoItem(MemoModel(0, "asdas")))
-//        memoAdapter.add(MemoItem(MemoModel(0, "asdas")))
-//        memoAdapter.add(MemoItem(MemoModel(0, "asdas")))
-
     }
 
     fun getRealmData() : List<MemoModel>{

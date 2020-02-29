@@ -1,8 +1,8 @@
-package com.example.sendbird_chat.RecyItems
+package com.example.sendbird_chat.View.Item
 
 import android.content.Context
 import android.content.Intent
-import com.example.sendbird_chat.ChatActivity
+import com.example.sendbird_chat.View.ChatActivity
 import com.example.sendbird_chat.R
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item

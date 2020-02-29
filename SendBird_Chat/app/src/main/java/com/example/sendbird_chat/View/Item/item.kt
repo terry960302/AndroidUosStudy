@@ -1,5 +1,6 @@
-package com.example.sendbird_chat
+package com.example.sendbird_chat.View.Item
 
+import com.example.sendbird_chat.R
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
 import kotlinx.android.synthetic.main.activity_channel_item.view.*

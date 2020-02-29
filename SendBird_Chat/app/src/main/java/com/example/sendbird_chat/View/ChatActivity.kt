@@ -1,7 +1,8 @@
-package com.example.sendbird_chat
+package com.example.sendbird_chat.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.sendbird_chat.R
 
 class ChatActivity : AppCompatActivity() {
 

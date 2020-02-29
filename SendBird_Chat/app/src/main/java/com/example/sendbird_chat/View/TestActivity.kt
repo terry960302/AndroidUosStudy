@@ -1,9 +1,11 @@
-package com.example.sendbird_chat
+package com.example.sendbird_chat.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sendbird_chat.R
+import com.example.sendbird_chat.View.Item.item
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 
