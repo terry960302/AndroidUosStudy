@@ -50,7 +50,6 @@ class MainActivity : AppCompatActivity() {
         rv_images.layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
         adapter = GroupAdapter()
         rv_images.adapter = adapter
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -58,18 +57,17 @@ class MainActivity : AppCompatActivity() {
 
         if (requestCode == RC_GALLERY) {
             if (resultCode == Activity.RESULT_OK) {
-                val images: ClipData? = data?.clipData
+                val images = data?.clipData
                 if(images != null){
                     for(i in 0 until images.itemCount){
                         val imageUri = images.getItemAt(i).uri
                         val bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, imageUri)
                         adapter.add(ImageItem(bitmap))
                     }
-                    adapter.notifyDataSetChanged()
+//                    adapter.notifyDataSetChanged()
                 }else{
                     Log.e(TAG, "이미지를 가져오는데 에러가 있습니다.")
                 }
-
             } else {
                 Toast.makeText(this, "갤러리 접근이 중지되었습니다.", Toast.LENGTH_SHORT).show()
             }

@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        
+
         //리사이클러뷰 초기화
         rv_main = findViewById(R.id.rv_main)
 

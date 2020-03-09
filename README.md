@@ -147,7 +147,7 @@
 
 </br>
 
-## 2020/03/01 - Multi Image Picker + Staggered
+## 2020/03/01,09 - Multi Image Picker + Staggered
 
 : 갤러리에서 이미지 하나가 아닌 "여러개"를 가져와서 인스타그램(?)처럼 띄우는 앱을 만들어보겠습니다.
 
