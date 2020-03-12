@@ -13,7 +13,10 @@ class ChannelItem(val context : Context, val channelId : String) : Item() {
         viewHolder.itemView.tv_channelId.text = channelId
 
         viewHolder.itemView.setOnClickListener {
-            context.startActivity(Intent(context, ChatActivity::class.java))
+
+            val intent = Intent(context, ChatActivity::class.java)
+            intent.putExtra("channelUrl", channelId)
+            context.startActivity(intent)
         }
     }
 
