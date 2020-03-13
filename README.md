@@ -1,8 +1,10 @@
-# 서울시립대학교 안드로이드 앱개발 무료 교육
+# 서울시립대학교 안드로이드 앱개발 교육
 
 <br>
 
 ## 강사 : 김태완
+
+### 홈페이지 : https://floating-tor-96092.herokuapp.com/
 
 <br>
 
@@ -170,3 +172,31 @@
 
 7. 이미지를 가져올 때마다 가져온 이미지들을 반응해서 띄우려면 notifysetDataChanged를 해줍니다.
 8. recyclerView 레이아웃 매니저 설정을 이전 앱들과는 다르게 StaggeredGridLayoutManager로 설정합니다.
+
+</br>
+
+## 2020/03/15 - Simple Bank App
+
+: 토스앱처럼 간단히 원격 Database를 이용해서 내 계좌에서 출금과 입금의 과정을 구현해봅니다.(실제 계좌 아님)
+
+<p align="center">
+<img width="243" alt="cardapp" src="https://user-images.githubusercontent.com/37768791/76642613-e5048580-6596-11ea-90be-3ced11c1de6e.PNG">
+<img width="243" alt="cardapp2" src="https://user-images.githubusercontent.com/37768791/76642617-e6ce4900-6596-11ea-94b6-4b3a72359198.PNG">
+
+</p>
+</br>
+
+### 사용한 라이브러리
+
+https://github.com/robinhood/ticker
+
+</br>
+
+### 제작순서
+
+1. 구글 파이어베이스 홈페이지로 가서 프로젝트를 생성해줍니다. 생성한 프로젝트와 앱을 연동해주고 여기서 Firestore라는 데이터베이스 인스턴스만 사용할 것이므로 Document에 따라 gradle에 설치해줍니다.
+2. 파이베이스 세팅이 끝났으면 카드뷰를 이용해서 위와 같이 숫자가 나오는 부분, 송금버튼, 입금 버튼을 만들어줍니다.
+3. 우선 파이어스토어에 초기 데이터를 넣어줍니다.
+4. 3번 과정에서 넣은 데이터를 가져오기 위해 addSnapshotListener를 이용해서 실시간 데이터 fetching을 합니다. (실시간으로 가져와야 UI가 그때그때 자동으로 업데이트됩니다.)
+5. 송금 과정을 위해서 기존 데이터베이스에 있는 데이터에 특정값을 뺀 값으로 다시 Firestore에 업로드해줍니다.
+6. 입금 과정은 5번과 반대로 특정값을 더해주면 됩니다.
