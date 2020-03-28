@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "458229945754",
+    "firebase_url": "https://uosstudy-cad25.firebaseio.com",
+    "project_id": "uosstudy-cad25",
+    "storage_bucket": "uosstudy-cad25.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458229945754:android:165d05257ad0f6d6ab1623",
+        "android_client_info": {
+          "package_name": "com.ritier.a20200315_firebase_count"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "458229945754-pcfdt5ht89qpjcvjius4i6gq9a8k9sli.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ritier.a20200315_firebase_count",
+            "certificate_hash": "f021745d1b8ec36f69993e1ee267f5a4f3188b6c"
+          }
+        },
+        {
+          "client_id": "458229945754-idqfi1gnr6p55c8fmro5cesqlgjdb0nn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWWUNxtyaYwaxhm7rMMOYgKp2ihAMbeZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "458229945754-idqfi1gnr6p55c8fmro5cesqlgjdb0nn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

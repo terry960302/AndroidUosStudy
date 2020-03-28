@@ -55,6 +55,14 @@ class ChatActivity : AppCompatActivity() {
         channelUrl = intent.getStringExtra("channelUrl") as String
     }
 
+    private fun getAllChats(){
+        OpenChannel.getChannel(channelUrl) { openChannel, exception ->
+            if(exception !=  null){
+                Log.e(TAG, "에러  : $exception")
+            }
+        }
+    }
+
     private fun initRecyclerView() {
         rv_chat = findViewById(R.id.rv_chat)
         chatAdapter = GroupAdapter()
@@ -81,7 +89,7 @@ class ChatActivity : AppCompatActivity() {
                         Log.e(TAG, "메세지 보내기 에러 : $e")
                     }
                     chatAdapter.add(ChatItem(userMessage.message))
-
+                    Log.d(TAG, "보낸 내용 : ${userMessage.message}")
                 }
                 chatAdapter.notifyDataSetChanged()
             }

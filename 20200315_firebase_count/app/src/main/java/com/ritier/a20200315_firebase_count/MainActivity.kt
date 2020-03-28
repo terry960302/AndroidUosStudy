@@ -1,5 +1,6 @@
 package com.ritier.a20200315_firebase_count
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     val TAG = "MainActivity"
 
+    private lateinit var cvCard : CardView
     private lateinit var tickerView: TickerView
     private lateinit var cv_send: CardView
     private lateinit var cv_deposit: CardView
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //초기화
+        cvCard = findViewById(R.id.cv_card)
         tickerView = findViewById(R.id.tickerView)
         cv_send = findViewById(R.id.cv_send)
         cv_deposit = findViewById(R.id.cv_deposit)
@@ -39,6 +42,12 @@ class MainActivity : AppCompatActivity() {
         //초기 세팅
         setTickerLibrary()
         getCurrentMoney()
+
+        //카드 등록
+        cvCard.setOnClickListener {
+            val intent = Intent(this, OcrActivity::class.java)
+            startActivity(intent)
+        }
 
         //송금하기
         cv_send.setOnClickListener {
@@ -56,7 +65,6 @@ class MainActivity : AppCompatActivity() {
             if (err != null) {
                 Log.e(TAG, "금액 데이터 가져오기 에러 : $err")
             }
-
             if (ds != null && ds.exists()) {
                 val data = ds.data!!
 
@@ -64,23 +72,27 @@ class MainActivity : AppCompatActivity() {
 
                 myCurrentMoney = currentMoney
 
-                if(currentMoney == 0){
+                if (currentMoney == 0) {
                     tickerView.text = "0,000"
-                }else{
+                } else {
                     val startNum =
-                        Math.pow(10.toDouble(), (currentMoney.toString().length - 1).toDouble()).toInt()
+                        Math.pow(10.toDouble(), (currentMoney.toString().length - 1).toDouble())
+                            .toInt()
 
                     for (i in startNum..currentMoney step startNum) {
                         tickerView.text = currencyFormat(i)
                     }
                     tickerView.text = currencyFormat(currentMoney)
                 }
+
+
             }
+
         }
     }
 
     private fun sendMoney() {
-        if (myCurrentMoney - 1000 >= 0) {
+        if (myCurrentMoney - 1250 >= 0) {
             docRef.set(
                 hashMapOf(
                     "current_money" to (myCurrentMoney - 1250)
@@ -91,9 +103,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "출금 취소되었습니다.", Toast.LENGTH_SHORT).show()
             }
         } else {
-            Handler().post {
-                Toast.makeText(this, "잔고가 부족합니다.", Toast.LENGTH_SHORT).show()
-            }
+            Toast.makeText(this, "잔고가 부족합니다.", Toast.LENGTH_SHORT).show()
         }
     }
 
